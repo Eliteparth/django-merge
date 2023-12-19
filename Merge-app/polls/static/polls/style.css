@@ -1,0 +1,37 @@
+li a {
+    color:green;
+}
+
+h1 a {
+    color: #C25100;
+    font-family: 'Lobster';
+}
+
+body {
+    padding-left: 15px;
+}
+
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 30pt;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+}
+
+
+/*body {
+    background: white url("images/background.jpg") no-repeat;
+}*/

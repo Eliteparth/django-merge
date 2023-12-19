@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="center row d-flex justify-content-center">
+    <div class="col-5">
+      <form method="POST" enctype="multipart/form-data" class="card">
+        {% csrf_token %}
+
+        {% if user %}
+          <div style="text-align: center;">
+            <img src="{{ user.avatar.url }}" alt="{{ user.username }}" class="avatar" accept=".jpg,.jpeg,.png" />
+          </div>
+        {% endif %}
+
+        <h2 class="text-center">{{ user.username|title }}</h2>
+        <p class="text-center">
+          <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+        </p>
+        <hr>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}" />
+
+        <label for="avatar">Avatar:</label>
+        <a href="{{ user.avatar.url }}">{{ user.avatar }}</a>
+        <input type="file" name="avatar" id="avatar" />
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" value="{{ user.mobile }}" />
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="{{ user.address }}" />
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ user.city }}" />
+        <label for="country">country:</label>
+        <input type="text" id="country" name="country" value="{{ user.country }}" />
+        <button type="submit" class="btn btn-primary full-width">Update Profile</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

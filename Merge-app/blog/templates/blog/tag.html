@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h2>List of all the tags</h2><hr />
+  {% for tag in tags %}
+    <a class="btn btn-dark btn-sm" href="{% url 'post_tag' tag.slug %}">{{ tag.name }}</a><br /><br />
+  {% endfor %}
+{% endblock %}

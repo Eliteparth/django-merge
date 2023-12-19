@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% url 'post_new' as postnew %}
+    {% if request.path == postnew %}
+        <h2>new post</h2>
+    {% else %}
+        <h2>Edit post</h2>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secondary">Save</button>
+    </form>
+{% endblock %}

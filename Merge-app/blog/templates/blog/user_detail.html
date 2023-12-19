@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="center row d-flex justify-content-center">
+    <div class="col-4">
+      <div style="text-align: center;">
+        <img src="{{ user.avatar.url }}" alt="{{ user.username }}" class="avatar" accept=".jpg,.jpeg,.png" style="border-radius: 50%;" />
+      </div>
+
+      <h2 class="text-center">{{ user.username|title }}</h2>
+      <p class="text-center">
+        <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+      </p>
+      <hr />
+
+      <p>
+        <b>Username : </b>{{ user.username }}
+      </p>
+
+      <p>
+        <b>Email Address : </b>{{ user.email }}
+      </p>
+
+      <p>
+        <b>Date of Birth :</b> {{ user.dob }}
+      </p>
+
+      <p>
+        <b>Mobile : </b>{{ user.mobile }}
+      </p>
+
+      <p>
+        <b>Address : </b>{{ user.address }}
+      </p>
+      <p>
+        <b>City : </b>{{ user.city }}
+      </p>
+      <p>
+        <b>Country : </b>{{ user.country }}
+      </p>
+      <hr />
+
+      <a href="{% url 'profile' %}"><button class="btn btn-primary">Update Profile</button></a>
+    </div>
+  </div>
+{% endblock %}
